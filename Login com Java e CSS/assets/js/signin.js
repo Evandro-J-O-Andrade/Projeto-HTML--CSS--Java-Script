@@ -21,14 +21,14 @@ function entrar(){
   let listaUser = []
   
   let userValid = {
-    nome: 'null',
-    user: 'null',
-    senha: 'null'
+    nome: null,
+    user: null,
+    senha: null
   }
   
   listaUser = JSON.parse(localStorage.getItem('listaUser'))
   
-  listaUser?.forEach((item) => {
+  listaUser.forEach((item) => {
     if(usuario.value == item.userCad && senha.value == item.senhaCad){
        
       userValid = {
@@ -41,7 +41,7 @@ function entrar(){
   })
    
   if(usuario.value == userValid.user && senha.value == userValid.senha){
-    window.location.href = './index.html'
+    window.location.href = '../../index.html'
     
     let mathRandom = Math.random().toString(16).substr(2)
     let token = mathRandom + mathRandom
